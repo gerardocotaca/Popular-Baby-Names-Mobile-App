@@ -1,0 +1,108 @@
+* {
+    box-sizing          : border-box;
+    margin              : 0;
+    font-family         : sans-serif;
+}
+
+html, body {      /* some mobile devices need this for vh/vw to work */
+    height        : 100%;   /* Set to full height */
+    margin        : 0;
+    overflow      : hidden; /* Prevent scrolling iOS quirk */
+}
+
+/* Portrait Mode (Default) */
+#head    { 
+    height              : 30vh; /* Header section height */
+    background-color    : cadetblue; /* Blue header background */
+}
+
+#main       { 
+    height              : 70vh; /* Main content area height */
+    background-color    : cornsilk; /* Cornsilk background for main content */
+}
+
+pre span, pre {
+    font-family         : monospace; /* Monospace font for preformatted text */
+}
+
+h1 {
+    text-align          : center; /* Center align the title */
+}
+
+#sqlDebug  {
+    margin              : 3vh; /* Add vertical spacing around the query box */
+}
+
+#sqlDebug pre {
+    background-color    : lightblue; /* Light blue background for query box */
+    border              : 1px solid black; /* Add black border */
+    border-radius       : 2vw; /* Rounded corners for the query box */
+    padding             : 0.5vw; /* Inner padding */
+    font-size           : 2.25vw; /* Font size for query text */
+}
+
+#controlDiv {
+    width               : 95vw; /* Control div width */
+    margin              : 0 auto; /* Center the control div */
+    text-align          : center; /* Center-align content inside control div */
+    padding-top         : 1vw; /* Add padding at the top */
+}
+
+#controlDiv button, select {
+    width               : 20vw; /* Button and dropdown width */
+    height              : 6vw; /* Button and dropdown height */
+    font-size           : 3vw; /* Font size for button and dropdown text */
+    vertical-align      : middle; /* Align vertically */
+}
+
+/* Landscape Mode */
+@media (orientation: landscape) {
+    #head {
+        width               : 50%; /* Adjust width for side-by-side layout */
+        height              : 100%; /* Full height in landscape */
+        float               : left; /* Float header to the left */
+        background-color    : cadetblue; /* Keep header background color */
+    }
+
+    #main {
+        width               : 50%; /* Chart takes the right half */
+        height              : 100%; /* Full height for the chart section */
+        float               : right; /* Float chart to the right */
+        background-color    : cornsilk; /* Keep main background color */
+    }
+
+    #controlDiv {
+        width               : 90%; /* Smaller width for better layout */
+        text-align          : left; /* Align controls to the left */
+        padding             : 2vw; /* Add padding for spacing */
+    }
+
+    #controlDiv select {
+        margin-bottom       : 1.5vw; /* Space between dropdowns */
+        width               : 90%; /* Full width for controls */
+        font-size           : 1.5vw; /* Adjust font size for dropdown text */
+    }
+
+    #sqlDebug {
+        width               : 85%; /* Reduced width for better fit */
+        margin              : 1vw auto; /* Center horizontally */
+        font-size           : 1.1vw; /* Adjust text size for clarity */
+        padding             : 1vw; /* Ensure proper padding */
+        background-color    : lightblue; /* Keep existing style */
+        border              : 1px solid black; /* Maintain border */
+        border-radius       : 5px; /* Slightly rounded corners */
+    }
+
+    #sqlDebug pre {
+        font-size           : 0.9vw; /* Smaller font size to fit content */
+        line-height         : 1.2;   /* Adjust line height for better spacing */
+        white-space         : pre-wrap; /* Allow text to wrap within the box */
+        word-break          : break-word; /* Break long words if necessary */
+        overflow            : hidden; /* Hide any overflowing text */
+    }
+
+    canvas {
+        width               : 100%; /* Ensure chart fits container */
+        height              : 100%; /* Full height for the chart */
+    }
+}
